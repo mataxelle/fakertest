@@ -11,11 +11,15 @@ import './styles/app.css';
 // start the Stimulus application
 import './bootstrap';
 
-import Vue from 'vue'
+import Vue from 'vue';
 
-import Home from './components/Home'
+import App from './vue/App';
+import router from './vue/router';
+import vuetify from './vue/plugins/vuetify';
 
 new Vue({
-    el: '#app',
-    components: {Home}
-  });
+  components: { App },
+  template: "<App/>",
+  router,
+  vuetify
+}).$mount("#app");
