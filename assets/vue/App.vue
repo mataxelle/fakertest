@@ -1,14 +1,11 @@
 <template>
-  <div>
-    <nav>
-      <router-link to="/home">
-        App
-      </router-link>
-    </nav>
-
-    <router-view />
-
-  </div>
+  <v-app>
+    <v-main>
+      <v-container fluid>
+        <router-view />
+      </v-container>
+    </v-main>
+  </v-app>
 </template>
 
 <script>

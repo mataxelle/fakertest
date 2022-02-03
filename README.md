@@ -13,7 +13,13 @@
 ## Lancer l'environnement de dévelopement
 
 * composer install
+* npm install
+* npm run dev-server
 * symfony serve -d
+
+## Ajout Fixtures tests
+
+* symfony console doctrine:fixtures:load
 
 ## Lancer des tests
 
