@@ -6,6 +6,7 @@ use App\Repository\PeintureRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: PeintureRepository::class)]
 class Peinture
@@ -13,39 +14,49 @@ class Peinture
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
+    #[Groups('peinture:read')]
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Groups('peinture:read')]
     private $nom;
 
     #[ORM\Column(type: 'decimal', precision: 6, scale: 2, nullable: true)]
+    #[Groups('peinture:read')]
     private $largeur;
 
     #[ORM\Column(type: 'decimal', precision: 6, scale: 2, nullable: true)]
+    #[Groups('peinture:read')]
     private $hauteur;
 
     #[ORM\Column(type: 'boolean')]
     private $enVente;
 
     #[ORM\Column(type: 'decimal', precision: 10, scale: 2, nullable: true)]
+    #[Groups('peinture:read')]
     private $prix;
 
     #[ORM\Column(type: 'datetime', nullable: true)]
+    #[Groups('peinture:read')]
     private $dateRealisation;
 
     #[ORM\Column(type: 'datetime')]
+    #[Groups('peinture:read')]
     private $createdAt;
 
     #[ORM\Column(type: 'text')]
+    #[Groups('peinture:read')]
     private $description;
 
     #[ORM\Column(type: 'boolean')]
     private $portfolio;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Groups('peinture:read')]
     private $slug;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Groups('peinture:read')]
     private $file;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'peintures')]

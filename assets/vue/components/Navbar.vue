@@ -7,7 +7,7 @@
       background-color="transparent"
       active-class="active-tab"
     >
-      <v-tab href="/home">Réalisations</v-tab>
+      <v-tab href="/">Réalisations</v-tab>
       <v-tab href="#actualites">Actualités</v-tab>
       <v-tab href="#">Portfolio</v-tab>
       <v-tab href="#">A propos</v-tab>

@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class AppController extends AbstractController
 {
     /**
-     * @Route("/{vueRouting}", name="index")
+     * @Route("/", name="index")
      * @return Response
      */
     public function indexAction(): Response
