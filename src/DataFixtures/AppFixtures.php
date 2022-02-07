@@ -66,7 +66,7 @@ class AppFixtures extends Fixture
 
             // Boucle peinture dans boucle categorie, pour avoir 2 peintures par categorie
             // Creation Peintures
-            for ($j = 0; $j < 10; $j++) {
+            for ($j = 0; $j < 2; $j++) {
                 $peinture = new Peinture();
 
                 $peinture->setNom($faker->words(3, true))

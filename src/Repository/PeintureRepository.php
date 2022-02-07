@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\Peinture;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 /**
  * @method Peinture|null find($id, $lockMode = null, $lockVersion = null)
@@ -14,9 +15,23 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class PeintureRepository extends ServiceEntityRepository
 {
+    public const PAGINATOR_PER_PAGE = 3;
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Peinture::class);
+    }
+
+    public function getPeinturePaginator(int $offset): Paginator
+    {
+        $query = $this->createQueryBuilder('p')
+            ->orderBy('p.createdAt', 'DESC')
+            ->setMaxResults(self::PAGINATOR_PER_PAGE)
+            ->setFirstResult($offset)
+            ->getQuery()
+        ;
+
+        return new Paginator($query);
     }
 
     // /**
