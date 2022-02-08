@@ -10,13 +10,13 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PeintureController extends AbstractController
 {
-    /*#[Route('/peintures', name: 'peintures')]
+    #[Route('/peintures', name: 'peintures')]
     public function peintures(PeintureRepository $peintureRepository)
     {
-        return $this->json($peintureRepository->findAll(), 200, [], ['groups'=> 'peinture:read']);
-    }*/
+        return $this->json($peintureRepository->findBy([], ['createdAt' => 'DESC']), 200, [], ['groups'=> 'peinture:read']);
+    }
 
-    #[Route('/peintures', name: 'peintures')]
+    /*#[Route('/peintures', name: 'peintures')]
     public function peintures(Request $request, PeintureRepository $peintureRepository)
     {
         // Récupèration de la valeur du décalage/commencement (offset) depuis les paramètres de l'URL ($request->query) sous forme d'entier (getInt()).
@@ -32,5 +32,5 @@ class PeintureController extends AbstractController
             'suivant' => min(count($paginator), $offset + PeintureRepository::PAGINATOR_PER_PAGE),
             // Les décalages précédent et suivant sont calculés sur la base de toutes les informations que nous avons reçues du paginateur.
         ]);
-    }
+    }*/
 }
