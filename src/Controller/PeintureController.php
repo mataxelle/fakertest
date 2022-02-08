@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Peinture;
 use App\Repository\PeintureRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
@@ -10,7 +11,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PeintureController extends AbstractController
 {
-    #[Route('/peintures', name: 'peintures')]
     public function peintures(PeintureRepository $peintureRepository)
     {
         return $this->json($peintureRepository->findBy([], ['createdAt' => 'DESC']), 200, [], ['groups'=> 'peinture:read']);
@@ -33,4 +33,26 @@ class PeintureController extends AbstractController
             // Les décalages précédent et suivant sont calculés sur la base de toutes les informations que nous avons reçues du paginateur.
         ]);
     }*/
+
+    /*public function add(Peinture $peinture)
+    {
+        return $this->json($peinture, 200, [], ['groups'=> 'peinture:read']);
+    }*/
+
+    public function show(Peinture $peinture)
+    {
+        return $this->json($peinture, 200, [], ['groups'=> 'peinture:read']);
+    }
+
+    /*public function edit(Peinture $peinture)
+    {
+        return $this->json($peinture, 200, [], ['groups'=> 'peinture:read']);
+    }
+
+    public function delete(Peinture $peinture)
+    {
+        return $this->json($peinture, 200, [], ['groups'=> 'peinture:read']);
+    }
+
+    */
 }

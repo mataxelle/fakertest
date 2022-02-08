@@ -16,7 +16,7 @@
                   >
 
                   <v-card-actions>
-                    <v-btn outlined rounded small> Peinture </v-btn>
+                    <v-btn outlined rounded small :to="{ name: 'peinture', params: {id: peinture.id} }"> Peinture </v-btn>
                   </v-card-actions>
                 </div>
               </div>

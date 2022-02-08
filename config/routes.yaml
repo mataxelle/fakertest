@@ -1,3 +1,27 @@
-#index:
-#    path: /
-#    controller: App\Controller\DefaultController::index
+index:
+    path: /
+    controller: App\Controller\AppController::indexAction
+
+peintures:
+    path: /peintures
+    controller: App\Controller\PeintureController::peintures
+
+peinture_add:
+    path: /peinture/add
+    controller: App\Controller\PeintureController::create    
+
+peinture_show:
+    path: /peinture/show/{id}
+    controller: App\Controller\PeintureController::show
+
+#peinture_edit:
+#    path: /peinture/edit/{id}
+#    controller: App\Controller\PeintureController::edit
+#    requirements:
+#    id: '\d+'
+
+#peinture_delete:
+#    path: /peinture/delete/{id}
+#    controller: App\Controller\PeintureController::delete
+#    requirements:
+#    id: '\d+'         

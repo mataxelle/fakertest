@@ -1,6 +1,5 @@
 <template>
   <v-app>
-    <Navbar />
     <v-parallax
       dark
       src="https://cdn.vuetifyjs.com/images/backgrounds/vbanner.jpg"
@@ -14,24 +13,19 @@
     </v-parallax>
     <Peintures />
     <Actualites />
-    <Footer />
   </v-app>
 </template>
 
 <script>
-import Navbar from "../components/Navbar";
 import Peintures from "../components/Peintures";
 import Actualites from "../components/Actualites";
-import Footer from "../components/Footer";
 
 export default {
   name: "Home",
 
   components: {
-    Navbar,
     Peintures,
     Actualites,
-    Footer,
   },
 };
 </script>
