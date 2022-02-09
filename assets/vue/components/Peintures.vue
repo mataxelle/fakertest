@@ -3,23 +3,27 @@
     <section class="py-16">
       <div v-if="peintures.length > 0">
         <v-row>
-          <v-col v-for="peinture in pagedPeinture" :key="peinture.id" cols="12">
-            <v-card max-width="600" height="250px" class="mx-auto">
-              <div class="d-flex flex-no-wrap justify-space-between">
-                <div>
-                  <v-card-title class="text-h5">{{
-                    peinture.nom
-                  }}</v-card-title>
-
-                  <v-card-subtitle
-                    >Publié le {{ peinture.createdAt }}</v-card-subtitle
-                  >
-
-                  <v-card-actions>
-                    <v-btn outlined rounded small :to="{ name: 'peinture', params: {id: peinture.id} }"> Peinture </v-btn>
-                  </v-card-actions>
-                </div>
-              </div>
+          <v-col v-for="peinture in pagedPeinture" :key="peinture.id" cols="12" xs="8" offset-xs="2">
+            <v-card max-width="900" height="250" class="mx-auto my-10">
+              <v-row no-gutters>
+                <v-col cols="5">
+                  <router-link :to="{ name: 'peinture', params: {id: peinture.id} }">
+                    <v-img :src="peinture.file" class="rounded-l" height="250"></v-img>
+                  </router-link>
+                </v-col>
+                <v-col cols="7">
+                  <v-card height="250">
+                    <v-card-title>
+                      <router-link :to="{ name: 'peinture', params: {id: peinture.id} }" class="text-decoration-none">
+                        <p class="black--text">{{ peinture.nom }}</p>
+                      </router-link>
+                    </v-card-title>
+                    <v-card-text class="mt-4">{{ peinture.description }}</v-card-text>
+                    <v-divider class="mx-4"></v-divider>
+                    <v-card-text class="d-flex justify-end mb-6 text--secondary">AJOUTÉE LE {{ peinture.createdAt | formatDate }}</v-card-text>
+                  </v-card>
+                </v-col>
+              </v-row>
             </v-card>
           </v-col>
         </v-row>

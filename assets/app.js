@@ -14,8 +14,15 @@ import './bootstrap';
 import Vue from 'vue';
 
 import App from './vue/App';
+import moment from 'moment';
 import router from './vue/router';
 import vuetify from './vue/plugins/vuetify';
+
+Vue.filter('formatDate', function(value) {
+  if (value) {
+      return moment(String(value)).format('MM/DD/YYYY')
+  }
+});
 
 new Vue({
   components: { App },
