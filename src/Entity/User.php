@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Serializer\Annotation\Groups;
 
 #[ORM\Entity(repositoryClass: UserRepository::class)]
 #[ORM\Table(name: '`user`')]
@@ -16,6 +17,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
+    #[Groups('peintre:apropos')]
     private $id;
 
     #[ORM\Column(type: 'string', length: 180, unique: true)]
@@ -28,15 +30,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     private $password;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Groups('peintre:apropos')]
     private $nom;
 
     #[ORM\Column(type: 'string', length: 255)]
+    #[Groups('peintre:apropos')]
     private $prenom;
 
     #[ORM\Column(type: 'string', length: 255)]
     private $telephone;
 
     #[ORM\Column(type: 'text')]
+    #[Groups('peintre:apropos')]
     private $aPropos;
 
     #[ORM\OneToMany(mappedBy: 'user', targetEntity: Peinture::class, orphanRemoval: true)]

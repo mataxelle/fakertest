@@ -7,10 +7,10 @@
       background-color="transparent"
       active-class="active-tab"
     >
-      <v-tab href="/">Réalisations</v-tab>
-      <v-tab href="#actualites">Actualités</v-tab>
-      <v-tab href="#">Portfolio</v-tab>
-      <v-tab href="#">A propos</v-tab>
+      <v-tab :to="{ name: 'home' }">Réalisations</v-tab>
+      <v-tab :to="{ name: 'actualites' }">Actualités</v-tab>
+      <v-tab :to="{ name: 'portfolio' }">Portfolio</v-tab>
+      <v-tab :to="{ name: 'a_propos' }">A propos</v-tab>
       <v-tab href="#">Contact</v-tab>
     </v-tabs>
   </v-app-bar>

@@ -24,4 +24,8 @@ peinture_show:
 #    path: /peinture/delete/{id}
 #    controller: App\Controller\PeintureController::delete
 #    requirements:
-#    id: '\d+'         
+#    id: '\d+' 
+
+a_propos:
+    path: /a_propos
+    controller: App\Controller\AProposController::apropos

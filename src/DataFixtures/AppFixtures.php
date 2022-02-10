@@ -32,7 +32,8 @@ class AppFixtures extends Fixture
             ->setPrenom($faker->firstName())
             ->setEmail('user@test.com')
             ->setTelephone($faker->phoneNumber())
-            ->setAPropos($faker->text());
+            ->setAPropos($faker->text())
+            ->setRoles(['ROLE_PEINTRE']);
 
         // Criptage du mot de passe
         $password = $this->passwordHasher->hashPassword($user, 'password');

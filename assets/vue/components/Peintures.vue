@@ -8,7 +8,7 @@
               <v-row no-gutters>
                 <v-col cols="5">
                   <router-link :to="{ name: 'peinture', params: {id: peinture.id} }">
-                    <v-img :src="peinture.file" class="rounded-l" height="250"></v-img>
+                    <v-img :src="peinture.file" alt="image d'un arbre" class="rounded-l" height="250"></v-img>
                   </router-link>
                 </v-col>
                 <v-col cols="7">
@@ -32,7 +32,7 @@
 
       <div v-else>
         <v-row>
-          <v-col>Il n'y a aucune peintures de disponible !</v-col>
+          <v-col class="d-flex justify-center">Il n'y a aucune peintures de disponible !</v-col>
         </v-row>
       </div>
     </section>
