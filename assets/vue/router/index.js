@@ -1,7 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
-import Actualites from "../components/Actualites";
+import ActualitesList from "../components/ActualitesList";
 import Apropos from "../components/Apropos";
 import Home from "../views/Home";
 import PeinturePage from "../components/PeinturePage";
@@ -22,7 +22,7 @@ export default new VueRouter({
     },
     { path: "/actualites",
       name: "actualites",
-      component: Actualites
+      component: ActualitesList
     },
     { path: "/portfolio",
       name: "portfolio",

@@ -24,7 +24,11 @@ peinture_show:
 #    path: /peinture/delete/{id}
 #    controller: App\Controller\PeintureController::delete
 #    requirements:
-#    id: '\d+' 
+#    id: '\d+'
+
+posts:
+    path: /posts
+    controller: App\Controller\PostController::posts
 
 a_propos:
     path: /a_propos

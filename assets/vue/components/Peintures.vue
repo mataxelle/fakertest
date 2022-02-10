@@ -32,7 +32,7 @@
 
       <div v-else>
         <v-row>
-          <v-col class="d-flex justify-center">Il n'y a aucune peintures de disponible !</v-col>
+          <v-col class="d-flex justify-center">Il n'y a aucune peinture disponible !</v-col>
         </v-row>
       </div>
     </section>
@@ -49,7 +49,7 @@ export default {
     return {
       peintures: {},
       page: 1,
-      pageItem: 3,
+      pageItem: 6,
     };
   },
 
