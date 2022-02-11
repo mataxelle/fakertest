@@ -14,49 +14,49 @@ class Peinture
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column(type: 'integer')]
-    #[Groups('peinture:read')]
+    #[Groups(['peinture:read', 'category:read'])]
     private $id;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Groups('peinture:read')]
+    #[Groups(['peinture:read', 'category:read'])]
     private $nom;
 
     #[ORM\Column(type: 'decimal', precision: 6, scale: 2, nullable: true)]
-    #[Groups('peinture:read')]
+    #[Groups(['peinture:read', 'category:read'])]
     private $largeur;
 
     #[ORM\Column(type: 'decimal', precision: 6, scale: 2, nullable: true)]
-    #[Groups('peinture:read')]
+    #[Groups(['peinture:read', 'category:read'])]
     private $hauteur;
 
     #[ORM\Column(type: 'boolean')]
     private $enVente;
 
     #[ORM\Column(type: 'decimal', precision: 10, scale: 2, nullable: true)]
-    #[Groups('peinture:read')]
+    #[Groups(['peinture:read', 'category:read'])]
     private $prix;
 
     #[ORM\Column(type: 'datetime', nullable: true)]
-    #[Groups('peinture:read')]
+    #[Groups(['peinture:read', 'category:read'])]
     private $dateRealisation;
 
     #[ORM\Column(type: 'datetime')]
-    #[Groups('peinture:read')]
+    #[Groups(['peinture:read', 'category:read'])]
     private $createdAt;
 
     #[ORM\Column(type: 'text')]
-    #[Groups('peinture:read')]
+    #[Groups(['peinture:read', 'category:read'])]
     private $description;
 
     #[ORM\Column(type: 'boolean')]
     private $portfolio;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Groups('peinture:read')]
+    #[Groups(['peinture:read', 'category:read'])]
     private $slug;
 
     #[ORM\Column(type: 'string', length: 255)]
-    #[Groups('peinture:read')]
+    #[Groups(['peinture:read', 'category:read'])]
     private $file;
 
     #[ORM\ManyToOne(targetEntity: User::class, inversedBy: 'peintures')]

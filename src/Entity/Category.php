@@ -30,6 +30,7 @@ class Category
     private $slug;
 
     #[ORM\ManyToMany(targetEntity: Peinture::class, mappedBy: 'categorie')]
+    #[Groups('category:read')]
     private $peintures;
 
     public function __construct()

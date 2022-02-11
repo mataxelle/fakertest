@@ -2,7 +2,7 @@
   <div>
     <v-row class="portfolio" align="center" justify="center">
       <v-col class="text-center" cols="12">
-          <h1 class="font-italic white--text text-h2">Porfolio</h1>
+        <h1 class="font-italic white--text text-h2">Porfolio</h1>
       </v-col>
     </v-row>
 
@@ -23,6 +23,13 @@
                 <v-card-title>{{ categorie.nom }}</v-card-title>
               </v-img>
               <v-card-text>{{ categorie.description }}</v-card-text>
+              <v-card-actions>
+                <v-btn
+                  :to="{ name: 'categorie', params: { slug: categorie.slug } }"
+                  class="text-decoration-none"
+                  >VOIR</v-btn
+                >
+              </v-card-actions>
             </v-card>
           </v-col>
         </v-row>
@@ -54,7 +61,7 @@ export default {
 .portfolio {
   position: relative;
   height: 400px;
-  background-image: linear-gradient(#8D6E63, #442013);
+  background-image: linear-gradient(#8d6e63, #442013);
   border-bottom-left-radius: 50% 20%;
   border-bottom-right-radius: 50% 20%;
 }

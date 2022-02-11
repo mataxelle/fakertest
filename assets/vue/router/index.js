@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 
 import ActualitesList from "../components/ActualitesList";
 import Apropos from "../components/Apropos";
+import CategorieCard from "../components/CategorieCard";
 import Home from "../views/Home";
 import PeinturePage from "../components/PeinturePage";
 import Portfolio from "../components/Portfolio";
@@ -27,6 +28,10 @@ export default new VueRouter({
     { path: "/portfolio",
       name: "portfolio",
       component: Portfolio
+    },
+    { path: "/categorie/:slug",
+      name: "categorie",
+      component: CategorieCard
     },
     { path: "/a_propos",
       name: "a_propos",
