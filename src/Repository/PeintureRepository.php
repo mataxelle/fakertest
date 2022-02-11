@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Category;
 use App\Entity\Peinture;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -28,10 +29,23 @@ class PeintureRepository extends ServiceEntityRepository
             ->orderBy('p.createdAt', 'DESC')
             ->setMaxResults(self::PAGINATOR_PER_PAGE)
             ->setFirstResult($offset)
-            ->getQuery()
-        ;
+            ->getQuery();
 
         return new Paginator($query);
+    }
+
+    /**
+     * @return Peinture[] Returns an array of Peinture objects
+     */
+    public function findAllPortfolio(Category $category): array
+    {
+        return $this->createQueryBuilder('p')
+            ->where(':categorie MERMBER OF p.categorie')
+            ->andWhere('p.portfolio = TRUE')
+            ->setParameter('categorie', $category)
+            ->getQuery()
+            ->getResult()
+        ;    
     }
 
     // /**
