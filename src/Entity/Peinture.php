@@ -30,6 +30,7 @@ class Peinture
     private $hauteur;
 
     #[ORM\Column(type: 'boolean')]
+    #[Groups('category:read')]
     private $enVente;
 
     #[ORM\Column(type: 'decimal', precision: 10, scale: 2, nullable: true)]
@@ -49,6 +50,7 @@ class Peinture
     private $description;
 
     #[ORM\Column(type: 'boolean')]
+    #[Groups('category:read')]
     private $portfolio;
 
     #[ORM\Column(type: 'string', length: 255)]

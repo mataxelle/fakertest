@@ -20,6 +20,7 @@
             md="4"
             offset-md="0"
           >
+          <div v-if="peinture.portfolio == 1">
             <v-hover v-slot="{ hover }">
               <v-card :elevation="hover ? 12 : 2" :class="{ 'on-hover': hover }">
                 <router-link
@@ -28,7 +29,7 @@
                   <v-img :src="peinture.file"></v-img>
                 </router-link>
               </v-card>
-            </v-hover>
+            </v-hover></div>
           </v-col>
         </v-row>
       </section>
