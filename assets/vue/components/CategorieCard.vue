@@ -20,16 +20,20 @@
             md="4"
             offset-md="0"
           >
-          <div v-if="peinture.portfolio == 1">
-            <v-hover v-slot="{ hover }">
-              <v-card :elevation="hover ? 12 : 2" :class="{ 'on-hover': hover }">
-                <router-link
-                  :to="{ name: 'peinture', params: { id: peinture.id } }"
+            <div v-if="peinture.portfolio == 1">
+              <v-hover v-slot="{ hover }">
+                <v-card
+                  :elevation="hover ? 12 : 2"
+                  :class="{ 'on-hover': hover }"
                 >
-                  <v-img :src="peinture.file"></v-img>
-                </router-link>
-              </v-card>
-            </v-hover></div>
+                  <router-link
+                    :to="{ name: 'peinture', params: { slug: peinture.slug } }"
+                  >
+                    <v-img :src="peinture.file"></v-img>
+                  </router-link>
+                </v-card>
+              </v-hover>
+            </div>
           </v-col>
         </v-row>
       </section>
@@ -67,10 +71,10 @@ export default {
 }
 
 .v-card {
-transition: opacity .4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
 }
 
 .v-card:not(.on-hover) {
-opacity: 0.6;
+  opacity: 0.6;
 }
 </style>

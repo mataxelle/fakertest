@@ -17,7 +17,7 @@ export default new VueRouter({
       name: "home",
       component: Home
     },
-    { path: "/peinture/:id",
+    { path: "/peinture/:slug",
       name: "peinture",
       component: PeinturePage
     },

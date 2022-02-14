@@ -3,7 +3,7 @@
     <div>
         <v-row>
             <v-col>
-                <h2 class="text-h2">Dernières actulités</h2>
+                <h2 class="text-h2">Dernières actualités</h2>
             </v-col>
         </v-row>
     </div>

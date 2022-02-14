@@ -11,7 +11,7 @@ peinture_add:
     controller: App\Controller\PeintureController::create    
 
 peinture_show:
-    path: /peinture/show/{id}
+    path: /peinture/show/{slug}
     controller: App\Controller\PeintureController::show
 
 #peinture_edit:

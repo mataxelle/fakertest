@@ -7,14 +7,14 @@
             <v-card max-width="900" height="250" class="mx-auto my-10">
               <v-row no-gutters>
                 <v-col cols="5">
-                  <router-link :to="{ name: 'peinture', params: {id: peinture.id} }">
+                  <router-link :to="{ name: 'peinture', params: {slug: peinture.slug} }">
                     <v-img :src="peinture.file" alt="image d'un arbre" class="rounded-l" height="250"></v-img>
                   </router-link>
                 </v-col>
                 <v-col cols="7">
                   <v-card height="250">
                     <v-card-title>
-                      <router-link :to="{ name: 'peinture', params: {id: peinture.id} }" class="text-decoration-none">
+                      <router-link :to="{ name: 'peinture', params: {slug: peinture.slug} }" class="text-decoration-none">
                         <p class="black--text">{{ peinture.nom }}</p>
                       </router-link>
                     </v-card-title>

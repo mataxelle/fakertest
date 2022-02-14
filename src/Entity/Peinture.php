@@ -30,7 +30,7 @@ class Peinture
     private $hauteur;
 
     #[ORM\Column(type: 'boolean')]
-    #[Groups('category:read')]
+    #[Groups(['peinture:read', 'category:read'])]
     private $enVente;
 
     #[ORM\Column(type: 'decimal', precision: 10, scale: 2, nullable: true)]
