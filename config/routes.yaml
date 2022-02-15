@@ -30,6 +30,10 @@ posts:
     path: /posts
     controller: App\Controller\PostController::posts
 
+post_show:
+    path: /post/show/{slug}
+    controller: App\Controller\PostController::show
+
 portfolio:
     path: /portfolio
     controller: App\Controller\PortfolioController::portfolio

@@ -1,11 +1,12 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
+import ActualiteCard from "../components/ActualiteCard";
 import ActualitesList from "../components/ActualitesList";
 import Apropos from "../components/Apropos";
 import CategorieCard from "../components/CategorieCard";
 import Home from "../views/Home";
-import PeinturePage from "../components/PeinturePage";
+import PeintureCard from "../components/PeintureCard";
 import Portfolio from "../components/Portfolio";
 
 Vue.use(VueRouter);
@@ -19,11 +20,15 @@ export default new VueRouter({
     },
     { path: "/peinture/:slug",
       name: "peinture",
-      component: PeinturePage
+      component: PeintureCard
     },
     { path: "/actualites",
       name: "actualites",
       component: ActualitesList
+    },
+    { path: "/actualites/:slug",
+      name: "actualite_details",
+      component: ActualiteCard
     },
     { path: "/portfolio",
       name: "portfolio",

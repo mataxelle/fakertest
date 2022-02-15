@@ -4,21 +4,20 @@
       <div v-if="peintures.length > 0">
         <v-row>
           <v-col v-for="peinture in pagedPeinture" :key="peinture.id" cols="12" xs="8" offset-xs="2">
-            <v-card max-width="900" height="250" class="mx-auto my-10">
+            <v-card max-width="80%" class="mx-auto my-10">
               <v-row no-gutters>
-                <v-col cols="5">
+                <v-col md="5">
                   <router-link :to="{ name: 'peinture', params: {slug: peinture.slug} }">
                     <v-img :src="peinture.file" alt="image d'un arbre" class="rounded-l" height="250"></v-img>
                   </router-link>
                 </v-col>
-                <v-col cols="7">
+                <v-col md="7">
                   <v-card height="250">
                     <v-card-title>
                       <router-link :to="{ name: 'peinture', params: {slug: peinture.slug} }" class="text-decoration-none">
                         <p class="black--text">{{ peinture.nom }}</p>
                       </router-link>
                     </v-card-title>
-                    <v-card-text class="mt-4">{{ peinture.description }}</v-card-text>
                     <v-divider class="mx-4"></v-divider>
                     <v-card-text class="d-flex justify-end mb-6 text--secondary">AJOUTÉE LE {{ peinture.createdAt | formatDate }}</v-card-text>
                   </v-card>
