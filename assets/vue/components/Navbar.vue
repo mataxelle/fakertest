@@ -29,7 +29,7 @@
         </v-list>
       </v-menu>
       <v-tab :to="{ name: 'a_propos' }">A propos</v-tab>
-      <v-tab href="#">Contact</v-tab>
+      <v-tab :to="{ name: 'contact' }">Contact</v-tab>
     </v-tabs>
   </v-app-bar>
 </template>

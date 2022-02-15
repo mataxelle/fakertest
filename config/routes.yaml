@@ -45,3 +45,7 @@ portfolio_categorie:
 a_propos:
     path: /a_propos
     controller: App\Controller\AProposController::apropos
+
+contact:
+    path: /contact
+    controller: App\Controller\ContactController::contact
