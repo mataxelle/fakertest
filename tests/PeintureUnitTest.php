@@ -3,6 +3,7 @@
 namespace App\Tests;
 
 use App\Entity\Category;
+use App\Entity\Commentaire;
 use App\Entity\Peinture;
 use App\Entity\User;
 use DateTime;
@@ -98,6 +99,28 @@ class PeintureUnitTest extends TestCase
         $this->assertEmpty($peinture->getSlug());
         $this->assertEmpty($peinture->getFile());
         $this->assertEmpty($peinture->getUser());
+        $this->assertEmpty($peinture->getCategorie());
+        $this->assertEmpty($peinture->getId());
+    }
+
+    public function testGetAddRemoveCommentaire() {
+        $peinture = new Peinture();
+        $commentaire = new Commentaire();
+
+        $this->assertEmpty($peinture->getCommentaires());
+
+        $peinture->addCommentaire(($commentaire));
+        $this->assertContains($commentaire, $peinture->getCommentaires());
+
+        $peinture->removeCommentaire(($commentaire));
+        $this->assertEmpty($peinture->getCommentaires());
+    }
+
+    public function testremoveCategorie() {
+        $peinture = new Peinture();
+        $categorie = new Category();
+
+        $peinture->removeCategorie(($categorie));
         $this->assertEmpty($peinture->getCategorie());
     }
 }

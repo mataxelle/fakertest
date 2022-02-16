@@ -2,6 +2,7 @@
 
 namespace App\Tests;
 
+use App\Entity\Commentaire;
 use App\Entity\Post;
 use App\Entity\User;
 use DateTime;
@@ -56,5 +57,19 @@ class PostUnitTest extends TestCase
         $this->assertEmpty($post->getSlug());
         $this->assertEmpty($post->getCreatedAt());
         $this->assertEmpty($post->getUser());
+        $this->assertEmpty($post->getId());
+    }
+
+    public function testGetAddRemoveCommentaire() {
+        $post = new Post();
+        $commentaire = new Commentaire();
+
+        $this->assertEmpty($post->getCommentaires());
+
+        $post->addCommentaire(($commentaire));
+        $this->assertContains($commentaire, $post->getCommentaires());
+
+        $post->removeCommentaire(($commentaire));
+        $this->assertEmpty($post->getCommentaires());
     }
 }
