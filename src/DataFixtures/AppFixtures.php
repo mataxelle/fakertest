@@ -11,6 +11,9 @@ use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 
+/**
+ * @codeCoverageIgnore
+ */
 class AppFixtures extends Fixture
 {
     private $passwordHasher;
@@ -54,6 +57,17 @@ class AppFixtures extends Fixture
             $manager->persist($post);
         }
 
+        // Creation Post pour Test
+        $post = new Post();
+
+        $post->setTitre('Post test')
+             ->setContenu($faker->text(350))
+             ->setSlug('Post-test')
+             ->setCreatedAt($faker->dateTimeBetween('-6 month', 'now'))
+             ->setUser($user);
+
+        $manager->persist($post);
+
         // Creation Categories
         for ($k = 0; $k < 10; $k++) {
             $categorie = new Category();
@@ -87,6 +101,34 @@ class AppFixtures extends Fixture
                 $manager->persist($peinture);
             }
         }
+
+        // Creation Categorie pour Test
+        $categorie = new Category();
+
+        $categorie->setNom('Categorie test')
+                  ->setDescription($faker->words(10, true))
+                  ->setSlug('categorie-test');
+
+        $manager->persist($categorie);
+
+        // Creation Peinture pour Test
+        $peinture = new Peinture();
+
+        $peinture->setNom('Peinture test')
+                 ->setLargeur($faker->randomFloat(2, 20, 60))
+                 ->setHauteur($faker->randomFloat(2, 20, 60))
+                 ->setEnVente($faker->randomElement([true, false]))
+                 ->setPrix($faker->randomFloat(2, 20, 60))
+                 ->setDateRealisation($faker->dateTimeBetween('-6 month', 'now'))
+                 ->setCreatedAt($faker->dateTimeBetween('-6 month', 'now'))
+                 ->setDescription($faker->text())
+                 ->setPortfolio($faker->randomElement([true, false]))
+                 ->setSlug('peinture-test')
+                 ->setFile('/img/image.jpg')
+                 ->setUser($user)
+                 ->addCategorie($categorie);
+
+        $manager->persist($peinture);
 
         $manager->flush();
     }
