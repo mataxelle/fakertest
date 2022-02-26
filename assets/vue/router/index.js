@@ -7,6 +7,7 @@ import Apropos from "../components/Apropos";
 import CategorieCard from "../components/CategorieCard";
 import Contact from "../components/Contact";
 import Home from "../views/Home";
+import Login from "../components/Login";
 import PeintureCard from "../components/PeintureCard";
 import Portfolio from "../components/Portfolio";
 
@@ -42,6 +43,10 @@ export default new VueRouter({
     { path: "/a_propos",
       name: "a_propos",
       component: Apropos
+    },
+    { path: "/login",
+      name: "login",
+      component: Login
     },
     { path: "/contact",
       name: "contact",
